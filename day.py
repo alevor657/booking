@@ -4,9 +4,11 @@ class Day():
         self.number = number
         # self.match = #obj
 
-    # def book(self):
+    def book(self):
+        self.booked = True
 
-    # def is_booked(self):
-    #     return True
+    def unbook(self):
+        self.booked = False
 
-    # def unbook(self):
+    def is_booked(self):
+        return self.booked
