@@ -5,7 +5,19 @@ class Calendar():
         self.year = year
         self.months = [Month(n, year) for n in range(1, 13)]
 
-    def getMonth(self, month_nr):
+    def __str__(self):
+        result_string = "Current year is: {year}\n\n".format(year = self.year)
+        counter = 1
+        for mon in self.months:
+            result_string +=    \
+            str(counter) +": Month name: {mname}, days: {days}\n"   \
+            .format(mname = mon.name, days = mon.get_nr_of_days())
+
+            counter += 1
+
+        return result_string
+
+    def get_month(self, month_nr):
         return self.months[month_nr - 1]
 
 # Testings

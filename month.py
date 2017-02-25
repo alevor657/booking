@@ -10,6 +10,18 @@ class Month():
         self.days_in_month = []
         self.fill_month()
 
+    def __str__(self):
+        result_string = "Current month: {month}\n\n"    \
+        .format(month = self.name)
+
+        for day in self.days_in_month:
+            result_string +=    \
+            "{day_nr}. Booked:{booked}\n" \
+            .format(day_nr = day.number, booked = day.is_booked())
+
+        return result_string
+
+
     def get_nr_of_days(self):
         return monthrange(2017, self.month_number)[1]
 

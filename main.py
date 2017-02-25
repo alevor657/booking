@@ -10,5 +10,4 @@ while True:
     inp = input(">>> ")
 
     if "1" in inp:
-        print(inp)
-        handler.print_calendar()
+        handler.list_calendar()
