@@ -1,5 +1,5 @@
 class Handler():
-    def printMenu(self):
+    def print_menu(self):
         menu = """
             ### Menu ###
         1) Print calendar
@@ -7,3 +7,6 @@ class Handler():
         3
         """
         print(menu)
+
+    def print_calendar(self):
+        

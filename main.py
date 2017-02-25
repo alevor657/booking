@@ -6,9 +6,9 @@ handler = Handler()
 
 # Main menu loop
 while True:
-    handler.printMenu()
+    handler.print_menu()
     inp = input(">>> ")
 
     if "1" in inp:
         print(inp)
-        # handler.printCalendar()
+        handler.print_calendar()
