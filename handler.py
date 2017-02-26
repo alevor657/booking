@@ -16,6 +16,7 @@ class Handler():
         2) Create team
         3) List all created teams
         4) Create match
+        5) List all matches
         """
         print(menu)
 
