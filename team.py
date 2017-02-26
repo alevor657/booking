@@ -1,6 +1,10 @@
+"""
+A team module
+"""
+
 class Team():
     """
-    asd
+    Team class
     """
     def __init__(self, name):
         self.name = name
@@ -9,4 +13,7 @@ class Team():
         return self.name
 
     def get_team_name(self):
+        """
+        Returns teams name
+        """
         return self.name()

@@ -1,4 +1,7 @@
 #!/usr/bin/env python3
+"""
+Main module
+"""
 
 from handler import Handler
 

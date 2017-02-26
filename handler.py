@@ -1,14 +1,24 @@
+"""
+Main, big and code heavy handler module
+"""
+
 from calendar_module import Calendar
 from team import Team
 from match import Match
 
 class Handler():
+    """
+    Implements a handler class
+    """
     def __init__(self):
         self.all_matches = []
         self.all_teams = []
         self.calendar = Calendar()
 
     def print_menu(self):
+        """
+        Prints the menu
+        """
         menu = """
             ### Menu ###
         1) Print calendar
@@ -21,6 +31,9 @@ class Handler():
         print(menu)
 
     def list_calendar(self):
+        """
+        Prints calender
+        """
         print(self.calendar)
 
         inp = None
@@ -39,16 +52,25 @@ class Handler():
             break
 
     def list_month(self, month_nr):
+        """
+        Lists a given month
+        """
         mon = self.calendar.get_month(month_nr)
         print(mon)
         input("Press enter to continue...")
 
     def create_team(self):
+        """
+        Creates a team
+        """
         t = Team(input("Team name:\n"))
         self.all_teams.append(t)
         print(t, "created")
 
     def create_match(self):
+        """
+        Creates a match
+        """
         sport = input("Type of sport:\n")
         self.list_teams()
         team1 = self.all_teams[int(input("Choose team 1:\n")) - 1]
@@ -69,24 +91,25 @@ class Handler():
 
         self.all_matches.append(m)
 
-        print(
-        "Match booked month:{m}/day:{d}"    \
-        .format(m=mo, d=da)
-        )
+        print("Match booked month:{m}/day:{d}".format(m=mo, d=da))
         self.list_matches()
 
     def list_matches(self):
+        """
+        Prints all matches
+        """
         counter = 1
         for m in self.all_matches:
-            print("{count}:\n {match}\n\n".format(
-            count=counter, match=m
-            ))
+            print("{count}:\n {match}\n\n"\
+            .format(count=counter, match=m))
             counter += 1
         input("Press anykey to continue...")
 
 
     def list_teams(self):
-        result = "All teams:\n\n"
+        """
+        Prints all the teams
+        """
         counter = 1
 
         for t in self.all_teams:
