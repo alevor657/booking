@@ -18,6 +18,8 @@ class Month():
             result_string +=    \
             "{day_nr}. Booked:{booked}\n" \
             .format(day_nr = day.number, booked = day.is_booked())
+            if (day.is_booked()):
+                result_string += str(day.match)
 
         return result_string
 
